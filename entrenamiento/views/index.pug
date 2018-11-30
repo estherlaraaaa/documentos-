@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .container
+    header
+     h1 Administrador de Documentos 
+     .erros
+    form#new(action="/documento" method="post" name="saveDocumento")
+      .group
+        input#nombreDocumento(type="text", name="nombreDocumento" required)
+        span.highlight
+        span.bar
+        label(for="nombreDocumento") Documento
+      .group
+        input#propietario(type="text", name="propietario" required)
+        span.highlight
+        span.bar
+        label(for="propietario") Dueño
+      button.btn(type="submit")
+        span Guardar
+    .table
+      table 
+        thead
+          th Nombre Documento
+          th Dueño
+          th Opciones
+        tbody.documentos
+  script(src="/javascripts/main.js")
